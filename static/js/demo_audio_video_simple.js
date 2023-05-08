@@ -15,7 +15,7 @@ function clearConnectList() {
     }
 }
 
-
+/*
 function convertListToButtons (roomName, data, isPrimary) {
     clearConnectList();
     var otherClientDiv = document.getElementById('otherClients');
@@ -32,7 +32,7 @@ function convertListToButtons (roomName, data, isPrimary) {
         otherClientDiv.appendChild(button);
     }
 }
-
+*/
 
 function performCall(otherEasyrtcid) {
     easyrtc.hangupAll();
