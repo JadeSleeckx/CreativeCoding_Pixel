@@ -4,7 +4,10 @@ var selfEasyrtcid = "";
 function connect() {
     easyrtc.setVideoDims(640,480);
     //easyrtc.setRoomOccupantListener(convertListToButtons);
-    easyrtc.easyApp("easyrtc.audioVideoSimple", "selfVideo", ["callerVideo"], loginSuccess, loginFailure);
+    easyrtc.easyApp("easyrtc.audioVideoSimple", "selfVideo", ["callerVideo"], loginSuccess, loginFailure, {
+        url: "https://creative-coding-ap.herokuapp.com/demo_audio_video_simple.html",
+        secure: true
+    });
 }
 
 /*
