@@ -3,14 +3,11 @@ var selfEasyrtcid = "";
 
 function connect() {
     easyrtc.setVideoDims(640,480);
-    //easyrtc.setRoomOccupantListener(convertListToButtons);
-    easyrtc.easyApp("easyrtc.audioVideoSimple", "selfVideo", ["callerVideo"], loginSuccess, loginFailure, {
-        url: "https://creative-coding-ap.herokuapp.com/demo_audio_video_simple.html",
-        secure: true
-    });
+    easyrtc.setRoomOccupantListener(convertListToButtons);
+    easyrtc.easyApp("easyrtc.audioVideoSimple", "selfVideo", ["callerVideo"], loginSuccess, loginFailure);
 }
 
-/*
+
 function clearConnectList() {
     var otherClientDiv = document.getElementById('otherClients');
     while (otherClientDiv.hasChildNodes()) {
@@ -35,7 +32,7 @@ function convertListToButtons (roomName, data, isPrimary) {
         otherClientDiv.appendChild(button);
     }
 }
-*/
+
 
 
 function performCall(otherEasyrtcid) {
@@ -50,13 +47,8 @@ function performCall(otherEasyrtcid) {
 function loginSuccess(easyrtcid) {
     selfEasyrtcid = easyrtcid;
     document.getElementById("iam").innerHTML = "I am " + easyrtc.cleanId(easyrtcid);
-    //toegevoegd
-    var roomName = "myroom";
-    easyrtc.joinRoom("myRoom", null, function(roomName, otherEasyrtcid) {
-        performCall(selfEasyrtcid);
-    });
 
-    //performCall(selfEasyrtcid);
+    performCall(selfEasyrtcid);
 }
 
 
