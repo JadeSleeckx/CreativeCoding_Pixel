@@ -31,7 +31,7 @@ function convertListToButtons (roomName, data, isPrimary) {
         button.appendChild(label);
         otherClientDiv.appendChild(button);
     }
-
+    //toegevoegd
     if (Object.keys(data).length === 1) {
         var otherEasyrtcid = Object.keys(data)[0];
         performCall(otherEasyrtcid);
