@@ -48,6 +48,7 @@ function loginSuccess(easyrtcid) {
     selfEasyrtcid = easyrtcid;
     document.getElementById("iam").innerHTML = "I am " + easyrtc.cleanId(easyrtcid);
     //toegevoegd
+    var roomName = "myroom";
     easyrtc.joinRoom("myRoom", null, function(roomName, otherEasyrtcid) {
         performCall(selfEasyrtcid);
     });
