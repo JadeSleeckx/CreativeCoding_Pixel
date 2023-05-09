@@ -1,21 +1,5 @@
 var selfEasyrtcid = "";
 
-
-function connect() {
-    easyrtc.setVideoDims(640,480);
-    easyrtc.setRoomOccupantListener(convertListToButtons);
-    easyrtc.easyApp("easyrtc.audioVideoSimple", "selfVideo", ["callerVideo"], loginSuccess, loginFailure);
-}
-
-
-function clearConnectList() {
-    var otherClientDiv = document.getElementById('otherClients');
-    while (otherClientDiv.hasChildNodes()) {
-        otherClientDiv.removeChild(otherClientDiv.lastChild);
-    }
-}
-
-
 function convertListToButtons (roomName, data, isPrimary) {
     clearConnectList();
     var otherClientDiv = document.getElementById('otherClients');
@@ -37,6 +21,23 @@ function convertListToButtons (roomName, data, isPrimary) {
         performCall(otherEasyrtcid);
     }
 }
+
+function connect() {
+    easyrtc.setVideoDims(640,480);
+    easyrtc.setRoomOccupantListener(convertListToButtons);
+    easyrtc.easyApp("easyrtc.audioVideoSimple", "selfVideo", ["callerVideo"], loginSuccess, loginFailure);
+}
+
+
+function clearConnectList() {
+    var otherClientDiv = document.getElementById('otherClients');
+    while (otherClientDiv.hasChildNodes()) {
+        otherClientDiv.removeChild(otherClientDiv.lastChild);
+    }
+}
+
+
+
 
 
 
