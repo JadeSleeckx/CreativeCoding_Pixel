@@ -34,6 +34,7 @@ function convertListToButtons (roomName, data, isPrimary) {
 }
 */
 
+
 function performCall(otherEasyrtcid) {
     easyrtc.hangupAll();
 
@@ -46,6 +47,11 @@ function performCall(otherEasyrtcid) {
 function loginSuccess(easyrtcid) {
     selfEasyrtcid = easyrtcid;
     document.getElementById("iam").innerHTML = "I am " + easyrtc.cleanId(easyrtcid);
+
+    var roomName = "Livestream";
+    easyrtc.joinRoom(roomName, null, null, null);
+
+    performCall(selfEasyrtcid);
 }
 
 
