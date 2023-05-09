@@ -14,6 +14,9 @@ function convertListToButtons (roomName, data, isPrimary) {
         var label = document.createTextNode(easyrtc.idToName(easyrtcid));
         button.appendChild(label);
         otherClientDiv.appendChild(button);
+
+        //toegevoegd button wegdoen
+        otherClientDiv.removeChild(button);
     }
     //toegevoegd
     if (Object.keys(data).length === 1) {
