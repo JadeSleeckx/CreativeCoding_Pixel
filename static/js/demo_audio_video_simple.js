@@ -7,14 +7,14 @@ function connect() {
     easyrtc.easyApp("easyrtc.audioVideoSimple", "selfVideo", ["callerVideo"], loginSuccess, loginFailure);
  }
 
-
+/*
 function clearConnectList() {
     var otherClientDiv = document.getElementById('otherClients');
     while (otherClientDiv.hasChildNodes()) {
         otherClientDiv.removeChild(otherClientDiv.lastChild);
     }
 }
-
+*/
 /*
 function convertListToButtons (roomName, data, isPrimary) {
     clearConnectList();
@@ -50,9 +50,13 @@ function loginSuccess(easyrtcid) {
 
     //VERANDERING (toevoeging)
     var roomName = "Livestream";
-    easyrtc.joinRoom(roomName, null, null, null);
+    easyrtc.joinRoom(roomName, null, function(roomName) {
+        console.log("I'm in room: " + roomName);
+    }, function(errorCode,errorText,roomName){
+        easyrtc.showError(errorCode, errorText + ": room name =" + roomName);
+    });
 
-    performCall(selfEasyrtcid);
+    //performCall(selfEasyrtcid);
 }
 
 
