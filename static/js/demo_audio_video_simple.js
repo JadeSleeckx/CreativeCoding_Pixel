@@ -3,7 +3,7 @@ var selfEasyrtcid = "";
 
 function connect() {
     easyrtc.setVideoDims(640,480);
-    easyrtc.setRoomOccupantListener(convertListToButtons);
+    //easyrtc.setRoomOccupantListener(convertListToButtons);
     easyrtc.easyApp("easyrtc.audioVideoSimple", "selfVideo", ["callerVideo"], loginSuccess, loginFailure);
  }
 
@@ -48,6 +48,7 @@ function loginSuccess(easyrtcid) {
     selfEasyrtcid = easyrtcid;
     document.getElementById("iam").innerHTML = "I am " + easyrtc.cleanId(easyrtcid);
 
+    //VERANDERING (toevoeging)
     var roomName = "Livestream";
     easyrtc.joinRoom(roomName, null, null, null);
 
