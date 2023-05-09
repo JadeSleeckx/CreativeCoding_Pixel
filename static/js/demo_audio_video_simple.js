@@ -5,6 +5,15 @@ function connect() {
     easyrtc.setVideoDims(640,480);
     //easyrtc.setRoomOccupantListener(convertListToButtons);
     easyrtc.easyApp("easyrtc.audioVideoSimple", "selfVideo", ["callerVideo"], loginSuccess, loginFailure);
+
+    //NEw
+    easyrtc.setStreamAcceptor(function(callerEasyrtcid, stream) {
+        var video = document.getElementById("callerVideo");
+        easyrtc.setVideoObjectSrc(video,stream);
+    });
+    easyrtc.setOnStreamClosed(function (callerEasyrtcid) {
+        easyrtc.setVideoObjectSrc(document.getElementById("callerVideo"), "");
+    });
  }
 
 /*
