@@ -1,0 +1,66 @@
+:root {
+	--green: #b8d953;
+	--lilac: #b2b2eb;
+	--pink: #bb86e9;
+	--dark-green: #529a91;
+	--peach: #fe96b7;
+	--black: #191819;
+	--grey: #2a292a;
+	--white: #d9d9d9;
+  }
+  
+  * {
+	margin: 0;
+  }
+  
+  body {
+	background-image: url("/img/background.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center; /* centers content vertically */
+	height: 100vh; /* set body height to full viewport height */
+  }
+  
+  h1 {
+	font-family: "Press Start 2P", sans-serif;
+	font-size: 30px;
+	line-height: 46px;
+	text-align: center;
+	font-weight: 500;
+	margin: 20px 60px 0 60px;
+	margin-bottom: 10px;
+  }
+
+  .text1 {
+	position: absolute;
+	opacity: 1;
+	animation: fadeOut 6s forwards;
+  }
+  
+  .text2 {
+	position: absolute;
+	opacity: 0;
+	animation: fadeIn 10s forwards;
+  }
+  
+  @keyframes fadeOut {
+	80% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  
+  @keyframes fadeIn {
+	40% {
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 1;
+	}
+  }
+  
