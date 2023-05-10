@@ -74,7 +74,7 @@ function setup() {
     // Set the pixel density to 1
     pixelDensity(1);
     // Get the webcam feed
-    callerVideo = createCapture(VIDEO);
+    callerVideo = createCapture({video: {deviceId: 'some-device-id-here'}});
     // Hide the DOM element for the image <video>
     callerVideo.hide();
     noStroke();
