@@ -64,43 +64,32 @@ function loginFailure(errorCode, message) {
 // Variable for webcam
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
+    createCanvas(400, 400);
     // Set the pixel density to 1
     pixelDensity(1);
     // Get the webcam feed
-    callerVideo = createCapture(VIDEO, () => {
-        callerVideo.size(width,height);
-        callerVideo.hide();
-    });
+    myVideo = createCapture(VIDEO);
     // Hide the DOM element for the image <video>
+    myVideo.hide();
     noStroke();
   }
   
-  function draw() {
+function draw() {
     background(220);
-    //TOEGEVOEGD
-    callerVideo.size(width, height);
     // Display camera image
-    image(callerVideo, 0, 0, width, height);
+    image(myVideo, 0, 0);
     // Load camera image pixels
-    if (callerVideo.loadedmetadata){
-        callerVideo.loadPixels();
-        // Loop through every 10th x and 10th y location
-        for(let x = 0; x < callerVideo.width; x+=10) {
-            for(let y = 0; y < callerVideo.height; y+=10) {
-            // Get an array of rgba values for each pixel
-            // [r,g,b,a]
-            let colorFromVideo = callerVideo.get(x,y);
-            // Get the brightness from the rgba array
-            fill( colorFromVideo );
-            // Draw a 10x10 rectangle
-            rect(x, y, 10, 10);
+    myVideo.loadPixels();
+    // Loop through every 10th x and 10th y location
+    for(let x = 0; x < myVideo.width; x+=10) {
+        for(let y = 0; y < myVideo.height; y+=10) {
+        // Get an array of rgba values for each pixel
+        // [r,g,b,a]
+        let colorFromVideo = myVideo.get(x,y);
+        // Get the brightness from the rgba array
+        fill( colorFromVideo );
+        // Draw a 10x10 rectangle
+        rect(x, y, 10, 10);
         }
-     }
     }    
-  }
-
-  // Resize the canvas to match the window size
-function windowResized() {
-    resizeCanvas(windowWidth, windowHeight);
-  }
+}
