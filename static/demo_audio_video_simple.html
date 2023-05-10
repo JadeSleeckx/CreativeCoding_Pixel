@@ -27,39 +27,23 @@
         
 
     </head>
-    <body onload="connect();">
-        <!--hide-->
-        <div id="container">
-            <div id="main">
-                <!-- Main Content -->
-                
+    <body>               
 
-                <hr />
-                <!--show-->
-                <div id="demoContainer">
-                    <div id="connectControls">
-                        <div id="iam">Not yet connected...</div>
-                        <br />
-                        <strong>Connected users:</strong>
-                        <div id="otherClients"></div>
-                    </div>
-                    <div id="videos">
-                        <video autoplay="autoplay" playsinline="playsinline" class="easyrtcMirror" id="selfVideo" muted="muted" volume="0" ></video>
-                        <div style="position:absolute;top:0;">
-                        <video autoplay="autoplay" playsinline="playsinline" id="callerVideo"></video>
-                        </div>
-                        <!-- each caller video needs to be in it's own div so it's close button can be positioned correctly -->
-                    </div>
+        <div id="demoContainer">
+            <div id="connectControls">
+                <div id="iam">Not yet connected...</div>
+                <strong>Connected users:</strong>
+                <div id="otherClients"></div>
+            </div>
+            <div id="videos">
+                <video autoplay="autoplay" playsinline="playsinline" class="easyrtcMirror" id="selfVideo" muted="muted" volume="0" ></video>
+                <div style="position:absolute;top:0;">
+                <video autoplay="autoplay" playsinline="playsinline" id="callerVideo"></video>
                 </div>
-                <!--hide-->
-                <br style="clear:both;" />
-                <hr />
-
-            
-
-                
-
-
+                        <!-- each caller video needs to be in it's own div so it's close button can be positioned correctly -->
+            </div>
+        </div>
+ 
                 <!-- Runs the SyntaxHighlighter 
                 <script type="text/javascript">
                     loadAndFilter(window.location.href, "prettyHtml",2 );
