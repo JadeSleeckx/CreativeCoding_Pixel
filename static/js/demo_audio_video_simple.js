@@ -78,8 +78,29 @@ function setup() {
     callerVideo.hide();
     noStroke();
 }
+
+function draw() {
+    background(220);
+    // Load camera image pixels
+    callerVideo.loadPixels();
+    // Loop through every 10th x and 10th y location
+    for(let x = 0; x < callerVideo.width; x+=10) {
+      for(let y = 0; y < callerVideo.height; y+=10) {
+        // Get an array of rgba values for each pixel
+        // [r,g,b,a]
+        let colorFromVideo = callerVideo.get(x,y);
+        // Get the brightness from the rgba array
+        fill( colorFromVideo );
+        // Draw a 10x10 rectangle
+        rect(x, y, 10, 10);
+      }
+    }
+    // Display the canvas on top of the video
+    image(get(), 0, 0, callerVideo.width, callerVideo.height);
+  }
   
-  function draw() {
+/* 
+function draw() {
     background(220);
     // Display camera image
     image(callerVideo, 0, 0);
@@ -88,13 +109,14 @@ function setup() {
     // Loop through every 10th x and 10th y location
     for(let x = 0; x < callerVideo.width; x+=10) {
      for(let y = 0; y < callerVideo.height; y+=10) {
-       // Get an array of rgba values for each pixel
+        // Get an array of rgba values for each pixel
        // [r,g,b,a]
-       let colorFromVideo = callerVideo.get(x,y);
-       // Get the brightness from the rgba array
-       fill( colorFromVideo );
-       // Draw a 10x10 rectangle
-       rect(x, y, 10, 10);
-     }
+        let colorFromVideo = callerVideo.get(x,y);
+        // Get the brightness from the rgba array
+        fill( colorFromVideo );
+        // Draw a 10x10 rectangle
+        rect(x, y, 10, 10);
+        }
     }    
-  }
+}
+*/
