@@ -68,11 +68,11 @@ function setup() {
     // Set the pixel density to 1
     pixelDensity(1);
     // Get the webcam feed
-    callerVideo = createCapture(VIDEO);
+    callerVideo = callerVideo;
     // Hide the DOM element for the image <video>
     callerVideo.hide();
     noStroke();
-  }
+}
   
 function draw() {
     background(220);
