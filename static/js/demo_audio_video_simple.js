@@ -30,6 +30,12 @@ function connect() {
     easyrtc.setVideoDims(640,480);
     easyrtc.setRoomOccupantListener(convertListToButtons);
     easyrtc.easyApp("easyrtc.audioVideoSimple", "selfVideo", ["callerVideo"], loginSuccess, loginFailure);
+    //TOEGEVOEGD
+    callerVideo = createCapture(VIDEO);
+    // Set the capture dimensions
+    callerVideo.size(640, 480);
+    // Hide the capture element
+    callerVideo.hide();
 }
 
 
@@ -81,26 +87,24 @@ function setup() {
 }
 
 function draw() {
-    background(220);
-    // Load camera image pixels
+    // Load the webcam capture pixels
     callerVideo.loadPixels();
-    // Loop through every 10th x and 10th y location
-    for(let x = 0; x < callerVideo.width; x+=10) {
-      for(let y = 0; y < callerVideo.height; y+=10) {
-        // Get an array of rgba values for each pixel
-        // [r,g,b,a]
-        let colorFromVideo = callerVideo.get(x,y);
-        // Get the brightness from the rgba array
-        fill( colorFromVideo );
-        // Draw a 10x10 rectangle
-        rect(x, y, 10, 10);
-      }
-    }
-    // Display the canvas on top of the video
-    image(get(), 0, 0, callerVideo.width, callerVideo.height);
-  }
 
-/* 
+    // Draw the pixelated video on a p5.js canvas
+    push();
+    scale(0.25);
+    image(callerVideo, 0, 0, callerVideo.width, callerVideo.height);
+    filter(POSTERIZE, 4);
+    pop();
+
+    // Get the canvas as a video source for EasyRTC
+    var canvas = document.getElementsByTagName('canvas')[0];
+    var video = canvas.captureStream().getVideoTracks()[0];
+
+    // Set the video source for the EasyRTC call
+    easyrtc.setVideoObjectSrc(document.getElementById('callerVideo'), video);
+}
+ /*
 function draw() {
     background(220);
     // Display camera image

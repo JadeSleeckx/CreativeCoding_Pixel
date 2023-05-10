@@ -1,7 +1,3 @@
-canvas {
-    display: block;
-}
-
 #demoContainer {
     position: fixed;
     top: 0;
@@ -18,8 +14,8 @@ canvas {
 #otherClients {
     height:200px;
     overflow-y:scroll;
-    display: none;
 }
+
 #selfVideo {
     display: none;
 }
@@ -41,11 +37,3 @@ canvas {
     object-fit: cover;
 }
 
-.video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 0;
-    opacity: 0.8;
-}
