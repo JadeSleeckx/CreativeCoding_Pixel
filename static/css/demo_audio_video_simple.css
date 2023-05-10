@@ -1,5 +1,12 @@
 body {
 	background-image: url("../images/background.png");
+    background-size: cover;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center; /* centers content vertically */
+	height: 100vh; /* set body height to full viewport height */
 }
 
 #demoContainer {
