@@ -25,50 +25,48 @@
 
 
     </head>
-    <body onload="connect();">
+    <body>
         <!--hide-->
-        <div id="container">
-            <div id="main">
-                <!-- Main Content -->
+        
+        <div id="main">
+            <!-- Main Content -->
                 
 
-                <hr />
+            
                 <!--show-->
-                <div id="demoContainer">
-                    <div id="connectControls">
-                        <div id="iam">Not yet connected...</div>
+            <div id="demoContainer">
+                <div id="connectControls">
+                    <div id="iam">Not yet connected...</div>
                         <br />
-                        <strong>Connected users:</strong>
-                        <div id="otherClients"></div>
-                    </div>
-                    <div id="videos">
-                        <video autoplay="autoplay" playsinline="playsinline" class="easyrtcMirror" id="selfVideo" muted="muted" volume="0" ></video>
-                        <div style="position:absolute;top:0;">
-                        <video autoplay="autoplay" playsinline="playsinline" id="callerVideo"></video>
-                        </div>
-                        <!-- each caller video needs to be in it's own div so it's close button can be positioned correctly -->
-                    </div>
+                    <strong>Connected users:</strong>
+                    <div id="otherClients"></div>
                 </div>
-                <!--hide-->
-                <br style="clear:both;" />
-                <hr />
+                <div id="videos">
+                    <video autoplay="autoplay" playsinline="playsinline" class="easyrtcMirror" id="selfVideo" muted="muted" volume="0" ></video>
+                    <div style="position:absolute;top:0;">
+                    <video autoplay="autoplay" playsinline="playsinline" id="callerVideo"></video>
+                </div>
+                    <!-- each caller video needs to be in it's own div so it's close button can be positioned correctly -->
+                </div>
+            </div>
+            <!--hide-->
+            
 
             
 
                 
 
 
-                <!-- Runs the SyntaxHighlighter 
-                <script type="text/javascript">
-                    loadAndFilter(window.location.href, "prettyHtml",2 );
-                    loadAndFilter(getHelperPath("js"), "prettyJS", 2);
-                    loadAndFilter(getHelperPath("css"), "prettyCSS", 2);
-                </script>
-            -->
-                <!-- End Main Content -->
-            </div>
-            
+            <!-- Runs the SyntaxHighlighter 
+            <script type="text/javascript">
+                loadAndFilter(window.location.href, "prettyHtml",2 );
+                loadAndFilter(getHelperPath("js"), "prettyJS", 2);
+                loadAndFilter(getHelperPath("css"), "prettyCSS", 2);
+            </script>
+        -->
+            <!-- End Main Content -->
         </div>
+            
         <!--show-->
     </body>
 </html>
