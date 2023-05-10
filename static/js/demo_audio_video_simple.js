@@ -79,7 +79,7 @@ function setup() {
     //TOEGEVOEGD
     myVideo.size(width, height);
     // Display camera image
-    image(myVideo, 0, 0);
+    image(myVideo, 0, 0, width, height);
     // Load camera image pixels
     myVideo.loadPixels();
     // Loop through every 10th x and 10th y location
