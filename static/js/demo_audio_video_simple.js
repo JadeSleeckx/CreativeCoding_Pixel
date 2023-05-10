@@ -29,19 +29,6 @@ function connect() {
     easyrtc.setVideoDims(640,480);
     easyrtc.setRoomOccupantListener(convertListToButtons);
     easyrtc.easyApp("easyrtc.audioVideoSimple", "selfVideo", ["callerVideo"], loginSuccess, loginFailure);
-
-    //TOEGEVOEGD
-    easyrtc.setDisconnectListener(function() {
-        // Remove pixelation effect from local and remote video elements
-        var localVideo = document.getElementById('selfVideo');
-        var remoteVideos = document.querySelectorAll('video[id^="callerVideo-"]');
-        var pixelated = new Pixelate(localVideo);
-        pixelated.render({size: 0});
-        for (var i = 0; i < remoteVideos.length; i++) {
-          pixelated = new Pixelate(remoteVideos[i]);
-          pixelated.render({size: 0});
-        }
-      });
 }
 
 
@@ -57,12 +44,6 @@ function performCall(otherEasyrtcid) {
 
     var successCB = function() {};
     var failureCB = function() {};
-
-    //TOEGEVOEGD
-    var remoteVideo = document.getElementById('callerVideo-' + otherEasyrtcid);
-    var pixelated = new Pixelate(remoteVideo);
-    pixelated.render({size: 20});
-
     easyrtc.call(otherEasyrtcid, successCB, failureCB);
 }
 
@@ -79,7 +60,7 @@ function loginFailure(errorCode, message) {
     easyrtc.showError(errorCode, message);
 }
 
-/*
+
 // Variable for webcam
 
 function setup() {
@@ -112,4 +93,3 @@ function setup() {
      }
     }    
   }
-*/
