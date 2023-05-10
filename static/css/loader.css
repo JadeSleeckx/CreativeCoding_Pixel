@@ -14,7 +14,7 @@
   }
   
   body {
-	background-image: url('/static/images/background.png');
+	background-image: url("/img/background.png");
 	background-size: cover;
 	background-repeat: no-repeat;
 	display: flex;
@@ -26,32 +26,46 @@
   
   h1 {
 	font-family: "Press Start 2P", sans-serif;
-	font-size: 40px;
+	font-size: 66px;
 	text-align: center;
-	font-weight: 500;
+	font-weight: 100;
 	margin: 10px 20px 0 0;
 	margin-bottom: 10px;
   }
   
-  #animatie{
-	animation: Animation 3s ease-in-out 0s infinite normal none;
+  .progress-bar {
+	position: relative;
+	height: 70px;
+	width: 500px;
+	outline: 10px solid #000000;
+	margin-top: 40px;
   }
+
+  .progress-fill {
+	position: absolute;
+	height: 70px;
+	width: 500px;
+	animation: progress-forward 7s infinite;
+	background: linear-gradient(to right, #000000 50%, #000000 50%);
+	background-size: 200% 100%;
+	border: 10px solid rgba(0, 0, 0, 0);
+}
   
-  @keyframes Animation{
+  @keyframes progress-forward {
 	0% {
-		transform:  translate(0,0);
+	  width: 0%;
 	}
 	25% {
-		transform:  translate(0,-20px) rotate(3deg);
+	  width: 50%;
 	}
 	50% {
-		transform:  translate(0,-5px);
+	  width: 75%;
 	}
 	75% {
-		transform:  translate(0,-15px) rotate(-3deg);
+	  width: 85%;
 	}
 	100% {
-		transform:  translate(0,0);
+	  width: 100%;
 	}
-  }
+  } ;
   
