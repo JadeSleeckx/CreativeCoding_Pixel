@@ -18,6 +18,7 @@ canvas {
 #otherClients {
     height:200px;
     overflow-y:scroll;
+    display: none;
 }
 #selfVideo {
     display: none;
