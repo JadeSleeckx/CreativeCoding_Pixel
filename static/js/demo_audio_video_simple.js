@@ -62,7 +62,7 @@ function loginFailure(errorCode, message) {
 
 
 // Variable for webcam
-
+/*
 function setup() {
     createCanvas(400, 400);
     // Set the pixel density to 1
@@ -93,3 +93,4 @@ function draw() {
         }
     }    
 }
+*/
