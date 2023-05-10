@@ -62,6 +62,7 @@ function loginFailure(errorCode, message) {
 
 
 // Variable for webcam
+let callerVideo;
 
 function setup() {
     createCanvas(400, 400);
@@ -76,11 +77,34 @@ function setup() {
     // Hide the DOM element for the image <video>
     noStroke();
   }
-  
+
   function draw() {
     background(220);
     // Display camera image
-    image(callerVideo, 0, 0);
+    image(callerVideo, 0, 0, width, height);
+    // Load camera image pixels
+    callerVideo.addEventListener('play', function() {
+        setInterval(function() {
+            callerVideo.loadPixels();
+            for(let x = 0; x < callerVideo.width; x+=10) {
+                for(let y = 0; y < callerVideo.height; y+=10) {
+                    // Get an array of rgba values for each pixel
+                    // [r,g,b,a]
+                    let colorFromVideo = callerVideo.get(x,y);
+                    // Get the brightness from the rgba array
+                    fill( colorFromVideo );
+                    // Draw a 10x10 rectangle
+                    rect(x, y, 10, 10);
+                }
+            }
+        }, 1000 / 30);
+    });
+  }
+  /*
+  function draw() {
+    background(220);
+    // Display camera image
+    image(callerVideo, 0, 0,);
     // Load camera image pixels
     callerVideo.loadPixels();
     // Loop through every 10th x and 10th y location
@@ -96,3 +120,4 @@ function setup() {
      }
     }    
   }
+  */
