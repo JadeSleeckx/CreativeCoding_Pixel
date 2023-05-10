@@ -1,4 +1,5 @@
 var selfEasyrtcid = "";
+document.getElementById('callerVideo').style.display = 'block';
 
 function convertListToButtons (roomName, data, isPrimary) {
     clearConnectList();
