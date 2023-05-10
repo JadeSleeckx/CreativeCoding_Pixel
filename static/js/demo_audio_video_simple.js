@@ -77,9 +77,9 @@ function setup() {
     // Hide the DOM element for the image <video>
     callerVideo.hide();
     noStroke();
-  }
+}
 
-  function draw() {
+function draw() {
     // Get the caller video element
     var callerVideo = document.getElementById('callerVideo');
     
@@ -98,20 +98,21 @@ function setup() {
     // Loop through every 10th x and 10th y location
     for (var x = 0; x < canvas.width; x += 10) {
       for (var y = 0; y < canvas.height; y += 10) {
-        // Calculate the index of the current pixel in the imageData array
-        var index = (x + y * imageData.width) * 4;
+            // Calculate the index of the current pixel in the imageData array
+            var index = (x + y * imageData.width) * 4;
         
-        // Get the brightness of the pixel (average of R, G, and B values)
-        var brightness = (imageData.data[index] + imageData.data[index + 1] + imageData.data[index + 2]) / 3;
+            // Get the brightness of the pixel (average of R, G, and B values)
+            var brightness = (imageData.data[index] + imageData.data[index + 1] + imageData.data[index + 2]) / 3;
         
-        // Set the fill color to the brightness value
-        fill(brightness);
+            // Set the fill color to the brightness value
+            fill(brightness);
         
-        // Draw a 10x10 rectangle at the current x and y location
-        rect(x, y, 10, 10);
-      }
+            // Draw a 10x10 rectangle at the current x and y location
+            rect(x, y, 10, 10);
+        }
     }
-  }
+}
+  
   
   /*
   function draw() {
