@@ -44,6 +44,12 @@ function performCall(otherEasyrtcid) {
 
     var successCB = function() {};
     var failureCB = function() {};
+
+    //TOEGEVOEGD
+    var remoteVideo = document.getElementById('callerVideo-' + otherEasyrtcid);
+    var pixelated = new Pixelate(remoteVideo);
+    pixelated.render({size: 20});
+
     easyrtc.call(otherEasyrtcid, successCB, failureCB);
 }
 
@@ -60,58 +66,32 @@ function loginFailure(errorCode, message) {
     easyrtc.showError(errorCode, message);
 }
 
-
+/*
 // Variable for webcam
-let callerVideo;
 
 function setup() {
     createCanvas(400, 400);
     // Set the pixel density to 1
     pixelDensity(1);
     // Get the webcam feed
-    /*
-    callerVideo = createCapture(VIDEO);
-    */
-    callerVideo = document.getElementById('callerVideo');
-    callerVideo.style.display = 'none';
+    myVideo = createCapture(VIDEO);
     // Hide the DOM element for the image <video>
+    myVideo.hide();
     noStroke();
   }
-
-  function draw() {
-    if (callerVideo.readyState === callerVideo.HAVE_ENOUGH_DATA) {
-      background(220);
-      // Display camera image
-      image(callerVideo, 0, 0);
-      // Load camera image pixels
-      callerVideo.loadPixels();
-      // Loop through every 10th x and 10th y location
-      for(let x = 0; x < callerVideo.width; x+=10) {
-       for(let y = 0; y < callerVideo.height; y+=10) {
-         // Get an array of rgba values for each pixel
-         // [r,g,b,a]
-         let colorFromVideo = callerVideo.get(x,y);
-         // Get the brightness from the rgba array
-         fill( colorFromVideo );
-         // Draw a 10x10 rectangle
-         rect(x, y, 10, 10);
-       }
-      }
-    }
-  }
-  /*
+  
   function draw() {
     background(220);
     // Display camera image
-    image(callerVideo, 0, 0,);
+    image(myVideo, 0, 0);
     // Load camera image pixels
-    callerVideo.loadPixels();
+    myVideo.loadPixels();
     // Loop through every 10th x and 10th y location
-    for(let x = 0; x < callerVideo.width; x+=10) {
-     for(let y = 0; y < callerVideo.height; y+=10) {
+    for(let x = 0; x < myVideo.width; x+=10) {
+     for(let y = 0; y < myVideo.height; y+=10) {
        // Get an array of rgba values for each pixel
        // [r,g,b,a]
-       let colorFromVideo = callerVideo.get(x,y);
+       let colorFromVideo = myVideo.get(x,y);
        // Get the brightness from the rgba array
        fill( colorFromVideo );
        // Draw a 10x10 rectangle
@@ -119,4 +99,4 @@ function setup() {
      }
     }    
   }
-  */
+*/
