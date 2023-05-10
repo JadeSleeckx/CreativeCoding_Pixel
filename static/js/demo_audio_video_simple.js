@@ -93,6 +93,7 @@ function setup() {
             fill( colorFromVideo );
             // Draw a 10x10 rectangle
             rect(x, y, 10, 10);
+        }
      }
     }    
   }
