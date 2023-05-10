@@ -1,5 +1,4 @@
 var selfEasyrtcid = "";
-let callerVideo;
 
 function convertListToButtons (roomName, data, isPrimary) {
     clearConnectList();
@@ -75,7 +74,7 @@ function setup() {
     callerVideo = document.getElementById('callerVideo');
     callerVideo.style.display = 'none';
     // Hide the DOM element for the image <video>
-    callerVideo.hide();
+    callerVideo.style.display = 'none';
     noStroke();
   }
   
