@@ -74,7 +74,6 @@ function setup() {
     callerVideo = document.getElementById('callerVideo');
     callerVideo.style.display = 'none';
     // Hide the DOM element for the image <video>
-    callerVideo.style.display = 'none';
     noStroke();
   }
   
