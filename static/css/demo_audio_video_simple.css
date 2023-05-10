@@ -12,8 +12,7 @@
     display: none;
 }
 #otherClients {
-    height:200px;
-    overflow-y:scroll;
+    display: none;
 }
 
 #selfVideo {
@@ -30,11 +29,5 @@
 
 #callerVideo {
     display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    object-fit: cover;
 }
 
