@@ -78,43 +78,7 @@ function setup() {
     callerVideo.hide();
     noStroke();
 }
-
-function draw() {
-    // Get the caller video element
-    var callerVideo = document.getElementById('callerVideo');
-    
-    // Create a new offscreen canvas to draw the pixels on
-    var canvas = document.createElement('canvas');
-    canvas.width = callerVideo.videoWidth;
-    canvas.height = callerVideo.videoHeight;
-    
-    // Draw the current video frame onto the offscreen canvas
-    var ctx = canvas.getContext('2d');
-    ctx.drawImage(callerVideo, 0, 0, canvas.width, canvas.height);
-    
-    // Get the pixel data from the offscreen canvas
-    var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    
-    // Loop through every 10th x and 10th y location
-    for (var x = 0; x < canvas.width; x += 10) {
-      for (var y = 0; y < canvas.height; y += 10) {
-            // Calculate the index of the current pixel in the imageData array
-            var index = (x + y * imageData.width) * 4;
-        
-            // Get the brightness of the pixel (average of R, G, and B values)
-            var brightness = (imageData.data[index] + imageData.data[index + 1] + imageData.data[index + 2]) / 3;
-        
-            // Set the fill color to the brightness value
-            fill(brightness);
-        
-            // Draw a 10x10 rectangle at the current x and y location
-            rect(x, y, 10, 10);
-        }
-    }
-}
   
-  
-  /*
   function draw() {
     background(220);
     // Display camera image
@@ -134,4 +98,3 @@ function draw() {
      }
     }    
   }
-  */
