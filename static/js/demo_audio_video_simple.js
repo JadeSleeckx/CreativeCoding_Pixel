@@ -64,7 +64,7 @@ function loginFailure(errorCode, message) {
 // Variable for webcam
 
 function setup() {
-    createCanvas(400, 400);
+    createCanvas(windowWidth, windowHeight);
     // Set the pixel density to 1
     pixelDensity(1);
     // Get the webcam feed
@@ -76,6 +76,8 @@ function setup() {
   
   function draw() {
     background(220);
+    //TOEGEVOEGD
+    myVideo.size(width, height);
     // Display camera image
     image(myVideo, 0, 0);
     // Load camera image pixels
@@ -92,4 +94,9 @@ function setup() {
        rect(x, y, 10, 10);
      }
     }    
+  }
+
+  // Resize the canvas to match the window size
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
   }
