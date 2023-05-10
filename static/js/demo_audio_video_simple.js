@@ -81,17 +81,19 @@ function setup() {
     // Display camera image
     image(myVideo, 0, 0, width, height);
     // Load camera image pixels
-    myVideo.loadPixels();
-    // Loop through every 10th x and 10th y location
-    for(let x = 0; x < myVideo.width; x+=10) {
-     for(let y = 0; y < myVideo.height; y+=10) {
-       // Get an array of rgba values for each pixel
-       // [r,g,b,a]
-       let colorFromVideo = myVideo.get(x,y);
-       // Get the brightness from the rgba array
-       fill( colorFromVideo );
-       // Draw a 10x10 rectangle
-       rect(x, y, 10, 10);
+    if (myVideo.loadedmetadata){
+        myVideo.loadPixels();
+        // Loop through every 10th x and 10th y location
+        for(let x = 0; x < myVideo.width; x+=10) {
+            for(let y = 0; y < myVideo.height; y+=10) {
+            // Get an array of rgba values for each pixel
+            // [r,g,b,a]
+            let colorFromVideo = myVideo.get(x,y);
+            // Get the brightness from the rgba array
+            fill( colorFromVideo );
+            // Draw a 10x10 rectangle
+            rect(x, y, 10, 10);
+        }
      }
     }    
   }
