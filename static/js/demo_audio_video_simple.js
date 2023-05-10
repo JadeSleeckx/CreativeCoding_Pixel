@@ -89,7 +89,7 @@ function draw() {
         // Get the brightness from the rgba array
         fill( colorFromVideo );
         // Draw a 10x10 rectangle
-        rect(x, y, 20, 20);
+        rect(x, y, 100, 100);
         }
     }    
 }
