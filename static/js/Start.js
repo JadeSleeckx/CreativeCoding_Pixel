@@ -1,5 +1,5 @@
 setTimeout(function() {
-    const nextPage = 'loader';
+  const nextPage = 'loader';
   location.assign(`../loader.html?&nextPage=${nextPage}`)
   }, 1000); // 7000 milliseconden = 7 seconden
   
