@@ -68,24 +68,24 @@ function setup() {
     // Set the pixel density to 1
     pixelDensity(1);
     // Get the webcam feed
-    myVideo = createCapture(VIDEO);
+    callerVideo = createCapture(VIDEO);
     // Hide the DOM element for the image <video>
-    myVideo.hide();
+    callerVideo.hide();
     noStroke();
   }
   
 function draw() {
     background(220);
     // Display camera image
-    image(myVideo, 0, 0);
+    image(callerVideo, 0, 0);
     // Load camera image pixels
-    myVideo.loadPixels();
+    callerVideo.loadPixels();
     // Loop through every 10th x and 10th y location
-    for(let x = 0; x < myVideo.width; x+=10) {
-        for(let y = 0; y < myVideo.height; y+=10) {
+    for(let x = 0; x < callerVideo.width; x+=10) {
+        for(let y = 0; y < callerVideo.height; y+=10) {
         // Get an array of rgba values for each pixel
         // [r,g,b,a]
-        let colorFromVideo = myVideo.get(x,y);
+        let colorFromVideo = callerVideo.get(x,y);
         // Get the brightness from the rgba array
         fill( colorFromVideo );
         // Draw a 10x10 rectangle
