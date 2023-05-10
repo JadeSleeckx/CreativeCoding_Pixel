@@ -1,4 +1,5 @@
 var selfEasyrtcid = "";
+var callerVideo;
 
 function convertListToButtons (roomName, data, isPrimary) {
     clearConnectList();
@@ -69,7 +70,7 @@ function loginFailure(errorCode, message) {
 // Variable for webcam
 
 function setup() {
-    createCanvas(400, 400);
+    createCanvas(windowWidth, windowHeight);
     // Set the pixel density to 1
     pixelDensity(1);
     // Get the webcam feed
@@ -98,7 +99,7 @@ function draw() {
     // Display the canvas on top of the video
     image(get(), 0, 0, callerVideo.width, callerVideo.height);
   }
-  
+
 /* 
 function draw() {
     background(220);
