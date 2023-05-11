@@ -1,5 +1,4 @@
 var selfEasyrtcid = "";
-document.getElementById('callerVideo').style.display = 'block';
 
 function convertListToButtons (roomName, data, isPrimary) {
     clearConnectList();
@@ -86,11 +85,7 @@ const prompts = [
     promptElement.textContent = prompt;
   }
   
-  // Call the generatePrompt function every 5 minutes
-  setInterval(generatePrompt, 5 * 60 * 100);
-  
-  // Initialize the prompt on page load
-  generatePrompt();
+
   
   
   function startTimer(duration, display) {
@@ -126,35 +121,70 @@ const prompts = [
 
 
 // Variable for webcam
-/*
-function setup() {
-    createCanvas(400, 400);
-    // Set the pixel density to 1
-    pixelDensity(1);
-    // Get the webcam feed
-    callerVideo = callerVideo;
-    // Hide the DOM element for the image <video>
-    callerVideo.hide();
-    noStroke();
-}
+window.addEventListener("load", (event) => {
+
+    console.log('hallo')
+
+      // Call the generatePrompt function every 5 minutes
+  setInterval(generatePrompt, 5 * 60 * 100);
   
-function draw() {
-    background(220);
-    // Display camera image
-    image(callerVideo, 0, 0);
-    // Load camera image pixels
-    callerVideo.loadPixels();
-    // Loop through every 10th x and 10th y location
-    for(let x = 0; x < callerVideo.width; x+=10) {
-        for(let y = 0; y < callerVideo.height; y+=10) {
-        // Get an array of rgba values for each pixel
-        // [r,g,b,a]
-        let colorFromVideo = callerVideo.get(x,y);
-        // Get the brightness from the rgba array
-        fill( colorFromVideo );
-        // Draw a 10x10 rectangle
-        rect(x, y, 100, 100);
+  // Initialize the prompt on page load
+  generatePrompt();
+
+  const video = document.getElementById('callerVideo');
+const canvas = document.getElementById('myCanvas');
+const context = canvas.getContext('2d');
+
+context.imageSmoothingEnabled = false;
+
+
+video.addEventListener('timeupdate', function() {
+    if(!this.paused && !this.ended) {
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+    }
+}, false);
+
+setInterval(function() {
+    video.dispatchEvent(new Event('timeupdate'));
+}, 30);
+
+     
+    
+  });
+
+/*
+    function setup() {
+        console.log('setup')
+        createCanvas(400, 400);
+        // Set the pixel density to 1
+        pixelDensity(1);
+        // Get the webcam feed
+        callerVideo = new p5.MediaElement(document.getElementById('callerVideo'));
+        // Hide the DOM element for the image <video>
+        //callerVideo.hide();
+        noStroke();
+    }
+      
+    function draw() {
+
+        console.log('draw')
+        background(220);
+        // Display camera image
+        image(callerVideo, 0, 0);
+        console.log(callerVideo)
+        // Load camera image pixels
+        callerVideo.loadPixels();
+        // Loop through every 10th x and 10th y location
+        for(let x = 0; x < callerVideo.width; x+=10) {
+            for(let y = 0; y < callerVideo.height; y+=10) {
+            // Get an array of rgba values for each pixel
+            // [r,g,b,a]
+            let colorFromVideo = callerVideo.get(x,y);
+            // Get the brightness from the rgba array
+            fill( colorFromVideo );
+            // Draw a 10x10 rectangle
+            rect(x, y, 100, 100);
+            }
         }
-    }    
-}
-*/
+    }
+        */

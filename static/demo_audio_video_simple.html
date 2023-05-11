@@ -41,13 +41,14 @@
                         <strong>Connected users:</strong>
                         <div id="otherClients"></div>
                     </div>
-                    <div id="videos">
+                    <div id="videos" style="opacity:0;">
                         <video autoplay="autoplay" playsinline="playsinline" class="easyrtcMirror" id="selfVideo" muted="muted" volume="0" ></video>
                         <div style="position:absolute;top:0;">
                         <video autoplay="autoplay" playsinline="playsinline" id="callerVideo"></video>
                         </div>
                         <!-- each caller video needs to be in it's own div so it's close button can be positioned correctly -->
                     </div>
+                    <canvas id="myCanvas" width="60" height="40" style="width:600px;height:400px"> </canvas>
                
 
             
