@@ -97,7 +97,7 @@ socket.on('prompt', function(prompt) {
 
 var ws;
 
-var wsUri = "ws://192.168.100.1:1880/ws";
+var wsUri = "wss://192.168.100.1:1880/ws";
 
 /*var wsUri = "ws://127.0.0.1/ws";*/
 function wsConnect() {
