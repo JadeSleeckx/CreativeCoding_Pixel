@@ -17,7 +17,9 @@
         <!-- Assumes global locations for socket.io.js and easyrtc.js -->
         <script src="/socket.io/socket.io.js"></script>
         <script type="text/javascript" src="../easyrtc/easyrtc.js"></script>
+        
         <script type="text/javascript" src="js/demo_audio_video_simple.js"></script>
+        <script defer src="js/script.js"></script>
         
 
         
@@ -28,27 +30,23 @@
 
     </head>
     <body onload="connect();">
-        
-        
-                
-                <div id="demoContainer">
-                    <p id="prompt"></p>
-                    </br>
-                    <div><span id="time"></span></div>
-                    <div id="connectControls">
-                        <div id="iam">Not yet connected...</div>
-                        <br />
-                        <strong>Connected users:</strong>
-                        <div id="otherClients"></div>
+        <div id="demoContainer">
+            <p id="prompt"></p>
+            
+            <div><span id="time"></span></div>
+                <div id="connectControls">
+                    <div id="iam">Not yet connected...</div>
+                    <strong>Connected users:</strong>
+                    <div id="otherClients"></div>
+                </div>
+                <div id="videos" style="opacity:100;">
+                    <video autoplay="autoplay" playsinline="playsinline" class="easyrtcMirror" id="selfVideo" muted="muted" volume="0" ></video>
+                    <div style="position:absolute;top:0;">
+                    <video autoplay="autoplay" playsinline="playsinline" id="callerVideo"></video>
                     </div>
-                    <div id="videos" style="opacity:0;">
-                        <video autoplay="autoplay" playsinline="playsinline" class="easyrtcMirror" id="selfVideo" muted="muted" volume="0" ></video>
-                        <div style="position:absolute;top:0;">
-                        <video autoplay="autoplay" playsinline="playsinline" id="callerVideo"></video>
-                        </div>
                         <!-- each caller video needs to be in it's own div so it's close button can be positioned correctly -->
-                    </div>
-                    <canvas id="myCanvas" width="60" height="40" style="width:600px;height:400px"> </canvas>
+                </div>
+                <canvas id="myCanvas" width="60" height="40" style="width:100%;height:100%"> </canvas>
                
 
             
@@ -67,6 +65,29 @@
             </div>
             
         </div>
+        <div id="start-screen">
+            <h1 id="animatie">Press the 'start' button to start</h1>
+        </div>
+        <div id="loading-screen">
+            <h1>LOADING</h1>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+        <div id="intro">
+            <h1 class="text1">
+                Try to find someone from the other side and ask them to join you. </br> (Use
+                your voice to attract them.)
+              </h1>
+        </div>
+        <div id="intro2">
+            <h1 class="text2">
+                Questions will appear on screen, each of you has to answer it
+                honestly in 30s. Good luck!
+            </h1>
+        </div>
+                
+        
         <!--show-->
     </body>
 </html>

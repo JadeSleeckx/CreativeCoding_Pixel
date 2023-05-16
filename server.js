@@ -24,6 +24,76 @@ var webServer = http.createServer(app);
 // Start Socket.io so it attaches itself to Express server
 var socketServer = socketIo.listen(webServer, {"log level":1});
 
+socketServer.on('connection', (socket) => {
+    
+})
+
+const prompts = [
+    'If you could swap lives with one of your friends, who would it be?',
+    'What is the most important thing you have learned about yourself in the past year?',
+    'What is the biggest challenge you are currently facing in your life?',
+    'If you could change one thing about the world, what would it be?',
+    'What is your nickname?',
+    'What was your best birthday ever?',
+    'If money were no object, what would you do?',
+    'What is one item on your bucket list?',
+    'How do you make the world a better place?',
+    'What is the nicest act you secretly did for someone?',
+    'How do you define success in your life.'
+  
+  ];
+  
+  function generatePrompt() {
+    // Get a random prompt from the array
+    const randomIndex = Math.floor(Math.random() * prompts.length);
+    const prompt = prompts[randomIndex];
+  
+    socketServer.emit('prompt', prompt);
+  }
+  
+
+  
+  
+  function startTimer(duration, display) {
+    var start = Date.now(),
+    diff,
+    minutes,
+    seconds;
+  
+  function timer() {
+  // get the number of seconds that have elapsed since 
+  // startTimer() was called
+    diff = duration - (((Date.now() - start) / 1000) | 0);
+  
+  // does the same job as parseInt truncates the float
+    minutes = (diff / 60) | 0;
+    seconds = (diff % 60) | 0;
+  
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+  
+    display.textContent = minutes + ":" + seconds; 
+  
+  if (diff <= 0) {
+  // add one second so that the count down starts at the full duration
+  // example 05:00 not 04:59
+  start = Date.now() + 1000;
+  }
+  };
+  // we don't want to wait a full second before the timer starts
+  timer();
+  setInterval(timer, 1000);
+  }
+
+      // Call the generatePrompt function every 5 minutes
+      setInterval(generatePrompt, 5 * 60 * 100);
+  
+      // Initialize the prompt on page load
+      generatePrompt();
+
+
+// 
+
 // Cross-domain workaround presented below:
 /*
 socketServer.origins(function(origin, callback) {
@@ -73,23 +143,6 @@ var rtc = easyrtc.listen(app, socketServer, null, function(err, rtcRef) {
 });
 
 
-//websocket
-
-const wss = new WebSocket.Server({ server });
-
-wss.on('connection', (ws: WebSocket) => {
-
-    //connection is up, let's add a simple simple event
-    ws.on('message', (message: string) => {
-
-        //log the received message and send it back to the client
-        console.log('received: %s', message);
-        ws.send(`Hello, you sent -> ${message}`);
-    });
-
-    //send immediatly a feedback to the incoming connection    
-    ws.send('Hi there, I am a WebSocket server');
-});
 
 // Listen on port 8080
 webServer.listen(process.env.PORT || 8080, function () {

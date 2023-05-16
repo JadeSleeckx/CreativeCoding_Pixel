@@ -1,3 +1,4 @@
+
 var selfEasyrtcid = "";
 
 function convertListToButtons (roomName, data, isPrimary) {
@@ -60,97 +61,176 @@ function loginFailure(errorCode, message) {
     easyrtc.showError(errorCode, message);
 }
 
-const prompts = [
-    'If you could swap lives with one of your friends, who would it be?',
-    'What is the most important thing you have learned about yourself in the past year?',
-    'What is the biggest challenge you are currently facing in your life?',
-    'If you could change one thing about the world, what would it be?',
-    'What is your nickname?',
-    'What was your best birthday ever?',
-    'If money were no object, what would you do?',
-    'What is one item on your bucket list?',
-    'How do you make the world a better place?',
-    'What is the nicest act you secretly did for someone?',
-    'How do you define success in your life.'
-  
-  ];
-  
-  function generatePrompt() {
-    // Get a random prompt from the array
-    const randomIndex = Math.floor(Math.random() * prompts.length);
-    const prompt = prompts[randomIndex];
-  
-    // Display the prompt on the page
-    const promptElement = document.getElementById('prompt');
-    promptElement.textContent = prompt;
-  }
-  
-
-  
-  
-  function startTimer(duration, display) {
-    var start = Date.now(),
-    diff,
-    minutes,
-    seconds;
-  
-  function timer() {
-  // get the number of seconds that have elapsed since 
-  // startTimer() was called
-    diff = duration - (((Date.now() - start) / 1000) | 0);
-  
-  // does the same job as parseInt truncates the float
-    minutes = (diff / 60) | 0;
-    seconds = (diff % 60) | 0;
-  
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-    seconds = seconds < 10 ? "0" + seconds : seconds;
-  
-    display.textContent = minutes + ":" + seconds; 
-  
-  if (diff <= 0) {
-  // add one second so that the count down starts at the full duration
-  // example 05:00 not 04:59
-  start = Date.now() + 1000;
-  }
-  };
-  // we don't want to wait a full second before the timer starts
-  timer();
-  setInterval(timer, 1000);
-  }
 
 
 // Variable for webcam
+
 window.addEventListener("load", (event) => {
+    const video = document.getElementById('callerVideo');
+    const canvas = document.getElementById('myCanvas');
+    const context = canvas.getContext('2d');
 
-    console.log('hallo')
+    context.imageSmoothingEnabled = false;
 
-      // Call the generatePrompt function every 5 minutes
-  setInterval(generatePrompt, 5 * 60 * 100);
-  
-  // Initialize the prompt on page load
-  generatePrompt();
+    video.addEventListener('timeupdate', function() {
+        if(!this.paused && !this.ended) {
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+        }
+    }, false);
 
-  const video = document.getElementById('callerVideo');
-const canvas = document.getElementById('myCanvas');
-const context = canvas.getContext('2d');
+    setInterval(function() {
+        video.dispatchEvent(new Event('timeupdate'));
+    }, 30);
 
-context.imageSmoothingEnabled = false;
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
 
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
+});
+/*
+document.addEventListener('DOMContentLoaded', function() {
+    let callerVideo = document.getElementById("callerVideo");
+    let start = document.getElementById("start-screen");
+    let loading = document.getElementById("loading-screen");
+    let intro = document.getElementById("intro");
+    let intro2 = document.getElementById("intro2");
 
-video.addEventListener('timeupdate', function() {
-    if(!this.paused && !this.ended) {
-        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+    function displayVideo() {
+        callerVideo = "block";
+        start.start.style.display = "block";
+        loading.style.display = "none";
+        intro.style.display = "none";
+        intro2.style.display = "none";
     }
-}, false);
 
-setInterval(function() {
-    video.dispatchEvent(new Event('timeupdate'));
-}, 30);
+    function displayStart() {
+        start.style.display = "block";
+        loading.style.display = "none";
+        intro.style.display = "none";
+        intro2.style.display = "none";
+    }
 
-     
-    
-  });
+    function hideStart() {
+        start.style.display = "none";
+            loading.style.display = "none";
+        intro.style.display = "none";
+        intro2.style.display = "none";
+    }
+
+    function displayLoading() {
+        start.style.display = "none";
+        loading.style.display = "block";
+        intro.style.display = "none";
+        intro2.style.display = "none";
+    }
+
+    function hideLoading() {
+        start.style.display = "none";
+        loading.style.display = "none";
+        intro.style.display = "none";
+        intro2.style.display = "none";
+    }
+
+    function displayIntro () {
+        start.style.display = "none";
+        loading.style.display = "none";
+        intro.style.display = "block";
+        intro2.style.display = "none";
+    }
+
+    function hideIntro () {
+        start.style.display = "none";
+        loading.style.display = "none";
+        intro.style.display = "none";
+        intro2.style.display = "none";
+    }
+
+    function displayIntro2 () {
+        start.style.display = "none";
+        loading.style.display = "none";
+        intro.style.display = "none";
+        intro2.style.display = "block";
+    }
+
+    function hideIntro2 () {
+        start.style.display = "none";
+        loading.style.display = "none";
+        intro.style.display = "none";
+        intro2.style.display = "none";
+    }
+
+
+
+    function resetGame() {
+        displayStart();
+    }
+
+    window.onload = function () {
+        resetGame();
+    };
+
+    var socket = io();
+
+    socket.on('prompt', function(prompt) {
+        var promptElement = document.getElementById("prompt");
+        promptElement.textContent = prompt;
+    });
+
+
+    var ws;
+
+    var wsUri = "ws://192.168.100.1:1880/ws";
+        
+    function wsConnect() {
+        console.log("connect", wsUri);
+        ws = new WebSocket(wsUri);
+        
+        ws.onmessage = function (msg) {
+            console.log(msg.data);
+            if (msg.data === "groen") {
+                hideStart();
+                displayLoading();
+            setTimeout(function() {
+                hideLoading();
+                displayIntro();
+                setTimeout(function() {
+                    hideIntro();
+                    displayIntro2();
+                    setTimeout(function() {
+                        hideIntro2();
+                    }, 10000);
+                }, 10000);
+            }, 15000);
+                
+            } else if (msg.data ==="rood") {
+                resetGame();
+                }
+
+        }
+        
+            ws.onopen = function () {
+                console.log("Connected");
+            }
+        
+            ws.onclose = function () {
+                console.log("Disconnected");
+                // in case of lost connection tries to reconnect every 3 secs
+                setTimeout(wsConnect, 3000);
+            }
+        
+            ws.disconnect = function () {
+                console.log("Disconnected");
+            }
+        }
+        
+        window.onload = wsConnect();
+    });
+
+
+
 
 /*
     function setup() {
@@ -188,3 +268,5 @@ setInterval(function() {
         }
     }
         */
+
+    
