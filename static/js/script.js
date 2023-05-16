@@ -1,16 +1,16 @@
-/*
-let callerVideo = document.getElementById("callerVideo");
+let container = document.getElementById("demoContainer");
 let start = document.getElementById("start-screen");
 let loading = document.getElementById("loading-screen");
 let intro = document.getElementById("intro");
 let intro2 = document.getElementById("intro2");
+let callerVideo = document.getElementById("callerVideo");
 
 function displayVideo() {
-    callerVideo = "block";
-    start.start.style.display = "block";
+    start.style.display = "none";
     loading.style.display = "none";
     intro.style.display = "none";
     intro2.style.display = "none";
+    callerVideo.muted = false;
 }
 
 function displayStart() {
@@ -18,6 +18,8 @@ function displayStart() {
     loading.style.display = "none";
     intro.style.display = "none";
     intro2.style.display = "none";
+    container.style.opacity = "0%";
+    callerVideo.muted = true;
 }
 
 function hideStart() {
@@ -70,14 +72,20 @@ function hideIntro2 () {
 }
 
 
+function displayContainer () {
+    start.style.display = "none";
+    loading.style.display = "none";
+    intro.style.display = "none";
+    intro2.style.display = "none";
+    container.style.opacity = "100%";
+    callerVideo.muted = false;
+}
 
 function resetGame() {
     displayStart();
 }
 
-window.onload = function () {
-    resetGame();
-};
+
 
 var socket = io();
 
@@ -88,9 +96,10 @@ socket.on('prompt', function(prompt) {
 
 
 var ws;
-
+/*
 var wsUri = "ws://192.168.100.1:1880/ws";
-      
+*/
+var wsUri = "ws://127.0.0.1/ws";
 function wsConnect() {
     console.log("connect", wsUri);
     ws = new WebSocket(wsUri);
@@ -108,9 +117,11 @@ function wsConnect() {
                 displayIntro2();
                 setTimeout(function() {
                     hideIntro2();
-                }, 10000);
-            }, 10000);
-        }, 15000);
+                    Audio.muted =false;
+                    displayContainer();
+                }, 1000);
+            }, 1000);
+        }, 1500);
             
         } else if (msg.data ==="rood") {
             resetGame();
@@ -132,6 +143,4 @@ function wsConnect() {
             console.log("Disconnected");
         }
 }
-      
-    window.onload = wsConnect();
-*/
+    
