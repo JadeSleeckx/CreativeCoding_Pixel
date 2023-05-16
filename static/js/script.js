@@ -119,9 +119,9 @@ function wsConnect() {
                     hideIntro2();
                     Audio.muted =false;
                     displayContainer();
-                }, 1000);
-            }, 1000);
-        }, 1500);
+                }, 10000);
+            }, 10000);
+        }, 15000);
             
         } else if (msg.data ==="rood") {
             resetGame();
