@@ -104,10 +104,10 @@ var ws;
 const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get('ip');
 //eerst :1880
-var wsUri = "ws://192.168.100.1:80/ws";
+var wsUri = "ws://192.168.100.1:1880/ws";
 
 if (myParam == "3") {
-    wsUri = "ws://192.168.100.3:80/ws";
+    wsUri = "ws://192.168.100.3:1880/ws";
 }
 /*var wsUri = "ws://127.0.0.1/ws";*/
 function wsConnect() {
