@@ -99,7 +99,7 @@ socket.on('raspberry', function(data) {
 });
 
 
-var ws;
+var wss;
 
 const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get('ip');
@@ -112,9 +112,9 @@ if (myParam == "3") {
 /*var wsUri = "ws://127.0.0.1/ws";*/
 function wsConnect() {
     console.log("connect", wsUri);
-    ws = new WebSocket(wsUri);
+    wss = new WebSocket(wsUri);
       
-    ws.onmessage = function (msg) {
+    wss.onmessage = function (msg) {
         console.log(msg.data);
         if (msg.data === "groen") {
             hideStart();
@@ -139,17 +139,17 @@ function wsConnect() {
 
     }
       
-        ws.onopen = function () {
+        wss.onopen = function () {
             console.log("Connected");
         }
       
-        ws.onclose = function () {
+        wss.onclose = function () {
             console.log("Disconnected");
             // in case of lost connection tries to reconnect every 3 secs
             setTimeout(wsConnect, 3000);
         }
       
-        ws.disconnect = function () {
+        wss.disconnect = function () {
             console.log("Disconnected");
         }
 }
