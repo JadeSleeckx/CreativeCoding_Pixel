@@ -4,6 +4,7 @@ var express = require("express");           // web framework external module
 var serveStatic = require('serve-static');  // serve static files
 var socketIo = require("socket.io");        // web socket external module
 
+
 // This sample is using the easyrtc from parent folder.
 // To use this server_example folder only without parent folder:
 // 1. you need to replace this "require("../");" by "require("open-easyrtc");"
@@ -102,7 +103,7 @@ const prompts = [
         socketServer.emit('prompt', prompt);
       }, 10 * 1000);
 
-// 
+//ws.send
 
 // Cross-domain workaround presented below:
 /*
@@ -151,7 +152,6 @@ var rtc = easyrtc.listen(app, socketServer, null, function(err, rtcRef) {
         appObj.events.defaultListeners.roomCreate(appObj, creatorConnectionObj, roomName, roomOptions, callback);
     });
 });
-
 
 
 // Listen on port 8080

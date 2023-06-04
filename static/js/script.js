@@ -94,6 +94,10 @@ socket.on('prompt', function(prompt) {
     promptElement.textContent = prompt;
 });
 
+socket.on('raspberry', function(data) {
+    //
+});
+
 
 var ws;
 
@@ -149,4 +153,5 @@ function wsConnect() {
             console.log("Disconnected");
         }
 }
-    
+
+

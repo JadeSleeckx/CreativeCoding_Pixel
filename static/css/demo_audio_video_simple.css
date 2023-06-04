@@ -58,7 +58,9 @@ body {
 }
 
 #prompt {
-	z-index: 4;
+	z-index: 10;
+	position: absolute;
+	
 }
 
 
@@ -82,7 +84,6 @@ p {
     font-size: 30px;
     text-align: center;
     font-weight: 500;
-  
     padding-top: 1000px;
 }
 
