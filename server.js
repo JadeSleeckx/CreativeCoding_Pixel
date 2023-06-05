@@ -103,20 +103,7 @@ const prompts = [
         socketServer.emit('prompt', prompt);
       }, 10 * 1000);
 
-//ws.send
 
-// Cross-domain workaround presented below:
-/*
-socketServer.origins(function(origin, callback) {
-    if (origin && ![
-        'http://localhost:8080',
-        '*'
-    ].includes(origin)) {
-        return callback('origin not allowed', false);
-    }
-    callback(null, true);
-});
-*/
 
 easyrtc.setOption("logLevel", "debug");
 

@@ -16,10 +16,10 @@ function convertListToButtons (roomName, data, isPrimary) {
         button.appendChild(label);
         otherClientDiv.appendChild(button);
 
-        //toegevoegd button wegdoen
+        
         otherClientDiv.removeChild(button);
     }
-    //toegevoegd
+   
     if (Object.keys(data).length === 1) {
         var otherEasyrtcid = Object.keys(data)[0];
         performCall(otherEasyrtcid);
@@ -64,73 +64,5 @@ function loginFailure(errorCode, message) {
     easyrtc.showError(errorCode, message);
 }
 
-
-
-// Variable for webcam
-/*
-window.addEventListener("load", (event) => {
-    const video = document.getElementById('callerVideo');
-    const canvas = document.getElementById('myCanvas');
-    const context = canvas.getContext('2d');
-
-    context.imageSmoothingEnabled = false;
-
-    video.addEventListener('timeupdate', function() {
-        if(!this.paused && !this.ended) {
-            context.drawImage(video, 0, 0, canvas.width, canvas.height);
-        }
-    }, false);
-
-    setInterval(function() {
-        video.dispatchEvent(new Event('timeupdate'));
-    }, 30);
-
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
-
-    window.addEventListener('resize', () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    });
-});
-*/
-
-
-/*
-    function setup() {
-        console.log('setup')
-        createCanvas(400, 400);
-        // Set the pixel density to 1
-        pixelDensity(1);
-        // Get the webcam feed
-        callerVideo = new p5.MediaElement(document.getElementById('callerVideo'));
-        // Hide the DOM element for the image <video>
-        //callerVideo.hide();
-        noStroke();
-    }
-      
-    function draw() {
-
-        console.log('draw')
-        background(220);
-        // Display camera image
-        image(callerVideo, 0, 0);
-        console.log(callerVideo)
-        // Load camera image pixels
-        callerVideo.loadPixels();
-        // Loop through every 10th x and 10th y location
-        for(let x = 0; x < callerVideo.width; x+=10) {
-            for(let y = 0; y < callerVideo.height; y+=10) {
-            // Get an array of rgba values for each pixel
-            // [r,g,b,a]
-            let colorFromVideo = callerVideo.get(x,y);
-            // Get the brightness from the rgba array
-            fill( colorFromVideo );
-            // Draw a 10x10 rectangle
-            rect(x, y, 100, 100);
-            }
-        }
-    }
-        */
 
     
