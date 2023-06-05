@@ -99,22 +99,22 @@ socket.on('raspberry', function(data) {
 });
 
 
-var wss;
+var ws;
 
 const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get('ip');
 //eerst :1880
-var wsUri = "wss://192.168.100.1:1880/ws";
+var wsUri = "ws://192.168.100.1:1880/ws";
 
 if (myParam == "3") {
-    wsUri = "wss://192.168.100.3:1880/ws";
+    wsUri = "ws://192.168.100.3:1880/ws";
 }
 /*var wsUri = "ws://127.0.0.1/ws";*/
 function wsConnect() {
     console.log("connect", wsUri);
-    wss = new WebSocket(wsUri);
+    ws = new WebSocket(wsUri);
       
-    wss.onmessage = function (msg) {
+    ws.onmessage = function (msg) {
         console.log(msg.data);
         if (msg.data === "groen") {
             hideStart();
@@ -139,17 +139,17 @@ function wsConnect() {
 
     }
       
-        wss.onopen = function () {
+        ws.onopen = function () {
             console.log("Connected");
         }
       
-        wss.onclose = function () {
+        ws.onclose = function () {
             console.log("Disconnected");
             // in case of lost connection tries to reconnect every 3 secs
             setTimeout(wsConnect, 3000);
         }
       
-        wss.disconnect = function () {
+        ws.disconnect = function () {
             console.log("Disconnected");
         }
 }
