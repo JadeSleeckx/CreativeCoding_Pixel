@@ -27,8 +27,14 @@ The first thing you need to install the required modules:
 
 ```
 $npm install
+```
+
+Then you need to start the server:
+
+```
 $npm start
 ```
+
 
 For more information, please refer to the details below.
 
