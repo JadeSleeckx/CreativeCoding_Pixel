@@ -23,95 +23,44 @@ https://www.pixelgroup.info/
 
 This code has a backend and frontend. The backend, which is the server using easyRTC, establishes the connection between the two users for the videocall. It also ensures that the prompts are connected to each other, so both users have the same question. The file 'server.js' utilizes the backend. The frontend encompasses everything else, including all the HTML, CSS, and two script files.
 
-The first thing you need to install the required modules:
+- install the required modules:
 
 ```
 $npm install
 ```
 
-Then you need to start the server:
+- start the server:
 
 ```
 $npm start
 ```
 
 
-For more information, please refer to the details below.
-
-### Front End
+For more information and further steps, please refer to the details below.
 
 ### Back End
 
-
-
-
-EasyRTC Server Example
-======================
-
-This folder contains all the files you'll need to create a simple server with EasyRTC, Express, and Socket.io. You can copy these files where you wish.
-
-Files and Folders:
-------------------
-
- - package.json - Provides project information allowing npm to find and install required modules.
- - server.js - Server code.
- - server_ssl.js - Server code for doing ssl using included keys, for testing purposes.
- - localhost.(key/crt) - self-signed keys for local host.
- - /static/ - Root folder for web server. Put html files here!
-
- 
-Installing Required Modules:
-----------------------------
-
- - Type `npm install` in console.
- - This will read the package.json file to find and install the required modules including EasyRTC, Express, and Socket.io.
- - Required modules will go into a new 'node_modules' subfolder
-
-
-Running the Server:
--------------------
-
- - Type `npm start` in console.
-
-
-Viewing the examples:
----------------------
+#### Viewing the call:
+ - Start the localhost
+    ```
+    $npm run server
+    ```
 
  - In your WebRTC enabled browser, visit your server address including the port. By default port 8080 is used.
- - http://localhost:8080/
 
-Running the Server using docker:
--------------------
-
- - Type `npm run docker:build` then `npm run docker:start` in console.
-
-Note: Require Docker to be installed.
-
-Running the Server using docker-compose:
--------------------
-
- - Type `npm run docker-compose:start` in console.
-
-Note: Require docker-compose to be installed.
+ - Surf to http://localhost:8080/
 
 
-Manualy build and run container
--------------------
 
-Build:
-> docker build . -t easyrtc
+### Front End
 
-Run default:
-> docker run -it --name easyrtc -p 8080:8080 easyrtc
 
-Run HTTP server:
-> docker run -it --name easyrtc --rm -p 8080:8080 easyrtc run server
 
-Run HTTPS server:
->  docker run -it --name easyrtc --rm -p 8443:8443 easyrtc run server_ssl
 
-Run HTTPS server with custom certs:
->  docker run -it --name easyrtc --rm -p 8443:8443 -v $(pwd)/certs/:/usr/src/app/certs/:ro easyrtc run server_ssl
+
+
+
+
 
 
 
