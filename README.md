@@ -54,8 +54,20 @@ For more information and further steps, please refer to the details below.
 
 ## Front End
 
+## External Setup
 
+### Materials
+ - Laptop
+ - Raspberry Pi
+ - 4 buttons
+ - 2 screens
+ - 2 webcams
 
+### 2 Gameboys
+
+We have made 2 different ways to make the gameboy, using a lasercutter (wood) or using a cutting plotter (cardboard), you ofcourse can try to put something together yourself, this is you're choice.
+
+The files you need for the lasercutter or cutting plotter are displayed in the folder recources. The Instructions of the detailes and how to use it are in the folder. These are our 2 gameboys, 1 in cardboard, 1 in wood.
 
 
 

@@ -1,0 +1,23 @@
+In this folder there are 2 folders:
+
+- Gameboylasercut: This is the folder you need if you want to make the gameboy with a lasercut 
+
+	- Inside this folder you can find: 
+
+		- the gameboy (6mm)
+
+		- buttons (9mm)(this is for 2 gameboys) there are 12 long pieces that you need for 4 buttons just glue 3 of them together for 1 button
+
+		- boxinside (3mm) this is a box that you glue on the inside of the front of the gameboy just under the holes of the buttons
+
+		- stand (9mm) this is a table to put the gameboy on if you want
+
+- Gameboycardboad: Inside this folder you find pdf files to make the gameboy with a plottingmachine ( cardboard must be very sturdy)
+
+	- Inside this folder you can find: 
+
+		- Gameboy back, front and side files and also the box for the inside which is glued just under the holes for the button
+
+		- stickers folder : in here you find files to print out on sticker paper that you put on the cardboard version of the gameboy to give it color (after it is applied on the cardboard you cut out the holes, the lasercut version can be painted)
+
+- In this folder you dont have a file for the table to put the monitor on. Take measurements from the inside then cut it out of wood. The measerments for a mac monitor table stand are 25cm by 15cm and the height of the legs for the stand are 35 cm
