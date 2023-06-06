@@ -173,7 +173,7 @@ We have made 2 different ways to make the gameboy, using a lasercutter (wood) or
 
 The files you need for the lasercutter or cutting plotter are displayed in the folder recources. The Instructions of the detailes and how to use it are in the folder. These are our 2 gameboys, 1 in cardboard, 1 in wood.
 
-![alt text](Images_Readme/Wooden_Gameboy.jpg "Wooden Gameboy")
+![alt text](Images_Readme/Wooden_Gameboy.jpg "Wooden Gameboy" width="50%")
 
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
