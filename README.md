@@ -181,6 +181,11 @@ The files you need for the lasercutter or cutting plotter are displayed in the f
 
 ### Buttons
 
+Boot up you're raspberry pi and connect it to your computer. Open Nodered and make a new flow for the buttons.
+
+#### Setup Raspberry pi
+
+![alt text](Images_Readme/Raspberry_1.jpg "Cardboard Gameboy")
 
 
 
