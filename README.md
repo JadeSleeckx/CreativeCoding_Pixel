@@ -187,6 +187,10 @@ Boot up you're raspberry pi and connect it to your computer. Open Nodered and ma
 
 ![alt text](Images_Readme/Raspberry_1.jpg "Cardboard Gameboy")
 
+#### Setup Buttons
+
+![alt text](Images_Readme/Button_1.jpg "Cardboard Gameboy")
+![alt text](Images_Readme/Button_2.jpg "Cardboard Gameboy")
 
 
 
