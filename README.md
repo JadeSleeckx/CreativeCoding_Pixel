@@ -69,13 +69,13 @@ For more information and further steps, please refer to the details below.
 
  - A function is created to randomly select a prompt from the array and store it in the 'prompt' variable.
 
- - The generatePrompt function is called initially and every 2 minutes thereafter to update the prompt.
+ - The `generatePrompt` function is called initially and every 2 minutes thereafter to update the prompt.
 
  - An interval is set to emit the current prompt to the connected socket clients every 10 seconds.
 
  - EasyRTC options are configured, setting the log level to "debug".
 
- - The code overrides the default easyrtcAuth event listener to access its callback and handle authentication.
+ - The code overrides the default `easyrtcAuth` event listener to access its callback and handle authentication.
 
  - Upon joining a room, the code logs the stored credential for each connection.
 
@@ -85,7 +85,78 @@ For more information and further steps, please refer to the details below.
 
 
 ## Front End
+### Explanation Code:
+#### Demo_audio_video_simple.js
+ - The code initializes a variable `selfEasyrtcid` to store the EasyRTC client ID.
 
+ - The `convertListToButtons` function is defined to convert a list of room occupants into clickable buttons.
+
+ - The `clearConnectList` function removes all child elements from the "otherClients" div.
+
+ - The `performCall` function is used to initiate a call to another EasyRTC client.
+
+ - The `loginSuccess` function is called when the client successfully logs in.
+
+ - The `loginFailure` function is called when there is a login failure.
+
+ - The `connect` function is the entry point that sets up the EasyRTC settings, room occupant listener, and initializes the EasyRTC application.
+
+ - The `connect` function also calls `resetGame` and `wsConnect` (presumably defined elsewhere).
+
+ - Within the `convertListToButtons` function, the `otherClientDiv` element is cleared, and for each client in the `data` object, a button element is created.
+
+ - The onclick event of each button is set to call the `performCall` function with the corresponding `easyrtcid`.
+
+ - The button is appended to the `otherClientDiv`.
+
+ - The code then removes the button immediately after appending it.
+
+ - If there is only one client in the `data` object, a call is automatically performed to that client.
+
+ - The `easyrtc.setVideoDims` function sets the video dimensions.
+
+ - The `easyrtc.setRoomOccupantListener` function sets the listener for room occupants.
+
+ - The `easyrtc.easyApp` function initializes the EasyRTC application with the given configuration.
+
+ - The `loginSuccess` function assigns the `easyrtcid` to `selfEasyrtcid` and updates the "iam" element on the page.
+
+ - The `performCall` function hangs up all current calls and initiates a call to the specified `otherEasyrtcid`.
+
+ - The `loginFailure` function shows an error using `easyrtc.showError`.
+
+#### script.js
+ - The code initializes variables for various elements on the page using their respective IDs.
+
+ - The functions `displayVideo`, `displayStart`, `hideStart`, `displayLoading`, `hideLoading`, `displayIntro`, `hideIntro`, `displayIntro2`, `hideIntro2`, `displayContainer`, and `resetGame` are defined to control the display and behavior of different elements.
+
+ - The `resetGame` function is initially called to display the start screen.
+
+ - The `socket` variable is created to establish a socket connection using the Socket.IO library.
+
+ - The `socket.on` function listens for the 'prompt' event and updates the 'prompt' element on the page with the received prompt data.
+
+ - The `socket.on` function also listens for the 'raspberry' event but does not perform any action.
+
+ - The `ws` variable is declared.
+
+ - The code checks the URL parameter 'ip' to determine the WebSocket URI to connect to.
+
+ - The `wsConnect` function is defined to establish a WebSocket connection.
+
+ - Inside the `wsConnect` function, a WebSocket connection is created using the specified `wsUri`.
+
+ - Event handlers for the WebSocket connection are defined:
+
+    - The `onmessage` event handler processes incoming messages and performs actions based on the received data. If the data is 'groen', it triggers a sequence of displaying and hiding various elements on the page. If the data is 'rood', it calls the `resetGame` function.
+
+    - The `onopen` event handler logs that the connection is successfully established.
+
+    - The `onclose` event handler logs that the connection is closed and attempts to reconnect every 3 seconds.
+
+    - The `disconnect` function logs that the connection is disconnected.
+
+ - The `wsConnect` function is initially called to establish the WebSocket connection.
 ## External Setup
 
 ### Materials
