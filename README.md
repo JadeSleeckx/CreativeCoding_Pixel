@@ -9,6 +9,11 @@ Pixel is a captivating social experiment that explores the power of vulnerabilit
 
 Welcome to Pixel, where strangers meet, secrets unfold, and the pixelated tapestry of our lives reveals the beauty of true connection. Press "start" and let the experiment begin.
 
+If you want to experience the magic of Pixel firsthand and discover the surprising insights it unveils, we invite you to watch our video and visit our website. Immerse yourself in this unique social experiment that challenges the boundaries of connection.
+
+[<img src="Images_Readme/Tumbnail.png" width="50%">](https://www.youtube.com/watch?v=-LSQLKc2v48&ab_channel=JadeSleeckx "Now in Android: 55")
+Website: [Insert Website Link]
+
 
 EasyRTC Server Example
 ======================
