@@ -21,7 +21,8 @@ https://www.pixelgroup.info/
 
 ## Installation code
 
-can make this text better: This code has a backend and front end. The backend is the server using easyRTC, this is used for making the connection between the 2 users for the videocall and so that the prompts are connected to each other so both have the same question
+This code has a backend and frontend. The backend, which is the server using easyRTC, establishes the connection between the two users for the videocall. It also ensures that the prompts are connected to each other, so both users have the same question. The file 'server.js' utilizes the backend. The frontend encompasses everything else, including all the HTML, CSS, and two script files. For more information, please refer to the details below.
+
 ### Front End
 
 ### Back End
