@@ -185,31 +185,31 @@ Boot up you're raspberry pi and connect it to your computer. Open Nodered and ma
 
 #### Setup Raspberry pi
 
-![alt text](Images_Readme/Raspberry_1.jpg "Cardboard Gameboy")
+![alt text](Images_Readme/Raspberry_1.jpg "Wires Raspberry pi")
 
 #### Setup Buttons
 
-![alt text](Images_Readme/Button_1.jpg "Cardboard Gameboy")
-![alt text](Images_Readme/Button_2.jpg "Cardboard Gameboy")
+![alt text](Images_Readme/Button_1.jpg "Wires Buttons")
+![alt text](Images_Readme/Button_2.jpg "Wires Buttons")
 
 #### Setup NodeRed
 This is the flow:
-![alt text](Images_Readme/NodeRed_1.jpg "Cardboard Gameboy")
+![alt text](Images_Readme/NodeRed_1.png "NodeRed flow")
 
 This is PIN:37
-![alt text](Images_Readme/NodeRed_2.jpg "Cardboard Gameboy")
+![alt text](Images_Readme/NodeRed_2.png "NodeRed PIN:37")
 
 This is PIN:35
-![alt text](Images_Readme/NodeRed_3.jpg "Cardboard Gameboy")
+![alt text](Images_Readme/NodeRed_3.png "NodeRed PIN:35")
 
 These are the two switches
-![alt text](Images_Readme/NodeRed_4.jpg "Cardboard Gameboy")
+![alt text](Images_Readme/NodeRed_4.png "NodeRed switches")
 
 This is the top change msg.payload
-![alt text](Images_Readme/NodeRed_5.jpg "Cardboard Gameboy")
+![alt text](Images_Readme/NodeRed_5.png "NodeRed top change msg.payload")
 
 This is the bottom change msg.payload
-![alt text](Images_Readme/NodeRed_6.jpg "Cardboard Gameboy")
+![alt text](Images_Readme/NodeRed_6.png "NodeRed bottom change msg.payload")
 
 This is the websocket
-![alt text](Images_Readme/NodeRed_7.jpg "Cardboard Gameboy")
+![alt text](Images_Readme/NodeRed_7.png "NodeRed Websocket")
