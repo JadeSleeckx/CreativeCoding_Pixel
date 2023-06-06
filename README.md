@@ -38,7 +38,7 @@ $npm start
 
 For more information and further steps, please refer to the details below.
 
-### Back End
+## Back End
 
 #### Viewing the call:
  - Start the localhost
@@ -52,7 +52,7 @@ For more information and further steps, please refer to the details below.
 
 
 
-### Front End
+## Front End
 
 
 
