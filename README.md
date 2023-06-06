@@ -21,7 +21,16 @@ https://www.pixelgroup.info/
 
 ## Installation code
 
-This code has a backend and frontend. The backend, which is the server using easyRTC, establishes the connection between the two users for the videocall. It also ensures that the prompts are connected to each other, so both users have the same question. The file 'server.js' utilizes the backend. The frontend encompasses everything else, including all the HTML, CSS, and two script files. For more information, please refer to the details below.
+This code has a backend and frontend. The backend, which is the server using easyRTC, establishes the connection between the two users for the videocall. It also ensures that the prompts are connected to each other, so both users have the same question. The file 'server.js' utilizes the backend. The frontend encompasses everything else, including all the HTML, CSS, and two script files.
+
+The first thing you need to install the required modules:
+
+```
+$npm install
+$npm start
+```
+
+For more information, please refer to the details below.
 
 ### Front End
 
