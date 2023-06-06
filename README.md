@@ -1,4 +1,4 @@
-# H1 PIXEL: A SOCIAL EXPERIMENT IN CONNECTION
+# PIXEL: A SOCIAL EXPERIMENT IN CONNECTION
 
 
 Step into the world of Pixel, where two giant wooden Gameboys beckon from distant public places. With a single press of the start button, a mysterious connection is forged between them, and you find yourself face-to-face with a pixelated stranger.
@@ -11,12 +11,12 @@ Welcome to Pixel, where strangers meet, secrets unfold, and the pixelated tapest
 
 If you want to experience the magic of Pixel firsthand and discover the surprising insights it unveils, we invite you to watch our video and visit our website. Immerse yourself in this unique social experiment that challenges the boundaries of connection.
 
-## H2 Information
+## Information
 
-### H3 Video:
+#### Video:
 [<img src="Images_Readme/Tumbnail.png" width="100%">](https://www.youtube.com/watch?v=-LSQLKc2v48&ab_channel=JadeSleeckx )
 
-### H3 Our Website
+#### Our Website
 https://www.pixelgroup.info/
 
 
