@@ -50,6 +50,38 @@ For more information and further steps, please refer to the details below.
 
  - Surf to http://localhost:8080/
 
+ #### Explanation Code:
+ - The code sets up a server using Node.js and the EasyRTC framework for real-time communication
+
+ - It loads required modules such as `http`, `express`, `serveStatic`, and `socketIo`.
+
+ - It imports the EasyRTC module for handling real-time communication functionalities.
+
+ - The process name is set to "node-easyrtc" for identification purposes.
+
+ - An Express app is created and configured to serve static files from a "static" subfolder.
+
+ - An HTTP server is created using the Express app.
+
+ - A Socket.io server is started and attached to the Express server for handling web socket connections.
+
+ - The code defines an array of prompts that will be used in the social experiment.
+
+ - A function is created to randomly select a prompt from the array and store it in the 'prompt' variable.
+
+ - The generatePrompt function is called initially and every 2 minutes thereafter to update the prompt.
+
+ - An interval is set to emit the current prompt to the connected socket clients every 10 seconds.
+
+ - EasyRTC options are configured, setting the log level to "debug".
+
+ - The code overrides the default easyrtcAuth event listener to access its callback and handle authentication.
+
+ - Upon joining a room, the code logs the stored credential for each connection.
+
+ - The EasyRTC server is started and listens for incoming connections.
+
+ - The HTTP server listens on port 8080 (or an environment-specified port) for client requests.
 
 
 ## Front End
