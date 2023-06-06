@@ -11,7 +11,10 @@ Welcome to Pixel, where strangers meet, secrets unfold, and the pixelated tapest
 
 If you want to experience the magic of Pixel firsthand and discover the surprising insights it unveils, we invite you to watch our video and visit our website. Immerse yourself in this unique social experiment that challenges the boundaries of connection.
 
+#H2 Information
 [<img src="Images_Readme/Tumbnail.png" width="100%">](https://www.youtube.com/watch?v=-LSQLKc2v48&ab_channel=JadeSleeckx )
+
+
 Website: [Insert Website Link]
 
 
