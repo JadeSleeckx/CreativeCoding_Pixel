@@ -192,6 +192,24 @@ Boot up you're raspberry pi and connect it to your computer. Open Nodered and ma
 ![alt text](Images_Readme/Button_1.jpg "Cardboard Gameboy")
 ![alt text](Images_Readme/Button_2.jpg "Cardboard Gameboy")
 
+#### Setup NodeRed
+This is the flow:
+![alt text](Images_Readme/NodeRed_1.jpg "Cardboard Gameboy")
 
+This is PIN:37
+![alt text](Images_Readme/NodeRed_2.jpg "Cardboard Gameboy")
 
+This is PIN:35
+![alt text](Images_Readme/NodeRed_3.jpg "Cardboard Gameboy")
 
+These are the two switches
+![alt text](Images_Readme/NodeRed_4.jpg "Cardboard Gameboy")
+
+This is the top change msg.payload
+![alt text](Images_Readme/NodeRed_5.jpg "Cardboard Gameboy")
+
+This is the bottom change msg.payload
+![alt text](Images_Readme/NodeRed_6.jpg "Cardboard Gameboy")
+
+This is the websocket
+![alt text](Images_Readme/NodeRed_7.jpg "Cardboard Gameboy")
