@@ -13,11 +13,20 @@ If you want to experience the magic of Pixel firsthand and discover the surprisi
 
 ## Information
 
-#### Video:
+#### Video
 [<img src="Images_Readme/Tumbnail.png" width="100%">](https://www.youtube.com/watch?v=-LSQLKc2v48&ab_channel=JadeSleeckx )
 
 #### Our Website
 https://www.pixelgroup.info/
+
+## Installation code
+
+can make this text better: This code has a backend and front end. The backend is the server using easyRTC, this is used for making the connection between the 2 users for the videocall and so that the prompts are connected to each other so both have the same question
+### Front End
+
+### Back End
+
+
 
 
 EasyRTC Server Example
