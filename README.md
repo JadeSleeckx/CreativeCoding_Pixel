@@ -13,11 +13,11 @@ If you want to experience the magic of Pixel firsthand and discover the surprisi
 
 ## H2 Information
 
-video:
+### H3 Video:
 [<img src="Images_Readme/Tumbnail.png" width="100%">](https://www.youtube.com/watch?v=-LSQLKc2v48&ab_channel=JadeSleeckx )
 
-
-Website: https://www.pixelgroup.info/
+### H3 Our Website
+https://www.pixelgroup.info/
 
 
 EasyRTC Server Example
