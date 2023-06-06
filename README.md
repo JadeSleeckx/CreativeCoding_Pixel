@@ -1,4 +1,4 @@
-#1 PIXEL: A SOCIAL EXPERIMENT IN CONNECTION
+# H1 PIXEL: A SOCIAL EXPERIMENT IN CONNECTION
 
 
 Step into the world of Pixel, where two giant wooden Gameboys beckon from distant public places. With a single press of the start button, a mysterious connection is forged between them, and you find yourself face-to-face with a pixelated stranger.
