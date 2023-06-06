@@ -1,3 +1,15 @@
+#1 PIXEL: A SOCIAL EXPERIMENT IN CONNECTION
+
+
+Step into the world of Pixel, where two giant wooden Gameboys beckon from distant public places. With a single press of the start button, a mysterious connection is forged between them, and you find yourself face-to-face with a pixelated stranger.
+
+Guided only by your voices, you and your partner embark on a journey of discovery. Randomly generated questions appear on the screen, encouraging you to share and connect on a deeper level. The twist? You can't see each other clearly, only pixelated fragments of your beings.
+
+Pixel is a captivating social experiment that explores the power of vulnerability and human connection. Join us as we delve into the profound impact of limited visual information on our willingness to share, understand, and embrace the unknown.
+
+Welcome to Pixel, where strangers meet, secrets unfold, and the pixelated tapestry of our lives reveals the beauty of true connection. Press "start" and let the experiment begin.
+
+
 EasyRTC Server Example
 ======================
 
